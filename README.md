@@ -1,4 +1,8 @@
-Work in Progress:  Workbook is complete but I have not completed an analysis.  I will write this up after I have summary findings to present. 
+Work in Progress:  
+
+Workbook is complete and posted to this repo,
+
+But I have not completed an analysis.  I will write this up after I have summary findings to present. 
 
 General Structure:
 
