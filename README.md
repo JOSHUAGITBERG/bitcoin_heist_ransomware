@@ -1,7 +1,7 @@
 ## Synopsis
 
 The following exercise leverages ensemble machine learning techniques to identify 
-Ransomware addresses from within a dataset [^1]:![alt text](https://www.kaggle.com/datasets/sapere0/bitcoinheist-ransomware-dataset/download?datasetVersionNumber=1 ) of bitcoin blockchain transactions. The models
+Ransomware addresses from within a dataset [^1] of bitcoin blockchain transactions. The models
 are able to identify whether a given address is ransomware with 90% accuracy, and to identify 
 whether it belongs to a specific Ransomware family to within 99% accuracy.  
 
@@ -11,8 +11,7 @@ We highly recommend that exchanges or authorities interested in identifying rans
 
 ## Ransomware Facts
 
- Ransomware is a cyber attack vector that started demanding payment in bitcoin starting around 2013 with the emergence of “CryptoLocker”. Ransomware attacks have since become more common.  According to service provider AAG [^2]:![alt text](https://aag-it.com/the-latest-ransomware-statistics/)
-
+ Ransomware is a cyber attack vector that started demanding payment in bitcoin starting around 2013 with the emergence of “CryptoLocker”. Ransomware attacks have since become more common.  According to service provider AAG [^2]
 Ransomware attacks cost the US healthcare sector an estimated $7.8 billion in downtime alone in 2021
 There were over 200 million ransomware attacks across the globe in the first half of 2022   
 Ransomware accounted for around 20% of cyber breaches in 2022 
@@ -91,9 +90,11 @@ K Nearest Neighbor benefited the most from Near Miss
 
  We spend some time building cohorts based on highly weighted features as reported by the feature importance of XGBoost and Random Forest.  However, the approach of building cohorts only increased the presence of ransomware by a few percentages points, coming nowhere close to the >90% accuracy of the models.  This is likely due to the wide skew of feature values within each ransomware cohort, which makes individual transactions difficult to analyze.  Instead, we are required to rely on the models as effectively unsupervised.  The following chart is a collection of mean feature values, which were manually tabulated.  While this is chart is not useable, it provides some insight into how the features compare for the top five ransomware variants, and perhaps provides a visualization of how a feature based finger print of each variant may appear to a model.
 
-![alt text](https://github.com/JOSHUAGITBERG/bitcoin_heist_ransomware/blob/main/images/Means-by-Label.png)
 
 
+[^1]: Kaggle Data Source: ![alt text](https://github.com/JOSHUAGITBERG/bitcoin_heist_ransomware/blob/main/images/Means-by-Label.png)
+
+[^2]: AAG Ransomware Statistics: ![alt text](https://aag-it.com/the-latest-ransomware-statistics/)
 
 
 
