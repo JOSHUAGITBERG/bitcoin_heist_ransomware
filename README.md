@@ -11,9 +11,9 @@ We highly recommend that exchanges or authorities interested in identifying rans
 ## Ransomware Facts
 
  Ransomware is a cyber attack vector that started demanding payment in bitcoin starting around 2013 with the emergence of “CryptoLocker”. Ransomware attacks have since become more common.  According to service provider AAG [^2]
-Ransomware attacks cost the US healthcare sector an estimated $7.8 billion in downtime alone in 2021
-There were over 200 million ransomware attacks across the globe in the first half of 2022   
-Ransomware accounted for around 20% of cyber breaches in 2022 
+* Ransomware attacks cost the US healthcare sector an estimated $7.8 billion in downtime alone in 2021
+* There were over 200 million ransomware attacks across the globe in the first half of 2022   
+* Ransomware accounted for around 20% of cyber breaches in 2022 
 
 ## What is Bitcoin?
 
