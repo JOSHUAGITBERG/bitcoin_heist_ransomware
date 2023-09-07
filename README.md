@@ -57,8 +57,13 @@ and cost.
 
  ## Model Selection:  
 
-We compare the performance of five classification models: K Nearest Neighbor, Logistic
- Regression, Random Forest, XGBoost and ​​HistGradientBoostingClassifier.
+We compare the performance of five classification models: 
+
+* K Nearest Neighbor
+* Logistic Regression
+* Random Forest
+* XGBoost
+* ​​HistGradientBoostingClassifier.
 
  ### Hyper Parameter Selection:
 
@@ -88,7 +93,7 @@ Scores below represent the ability to categorize a given address as either malwa
 
 ![alt text](https://github.com/JOSHUAGITBERG/bitcoin_heist_ransomware/blob/main/images/F1-Scores-by-Model-Dataset.png)
 
-# Ransomware Label Identification:
+### Ransomware Label Identification:
 
 ![alt text](https://github.com/JOSHUAGITBERG/bitcoin_heist_ransomware/blob/main/images/F1-Scores-by-Label.png)
 
