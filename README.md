@@ -35,20 +35,20 @@ We built a random forest model that can identify a ransomware address with over 
 
 ## Methodology
 
- # Data Preparation: 
+ ### Data Preparation: 
 
 The dataset was highly imbalanced, with only 2% of the data representing malware.  We took
 two independent approaches to remedy this:
 
- # Random Under Sampling:  
+ ### Random Under Sampling:  
 
 We combined all of the malware data with a random sample of just 2% of the remaining data set to create a balanced data set of malware and non-malware.  
 
-  # Near Miss Controlled Under Sampling:  
+  ### Near Miss Controlled Under Sampling:  
 
 We used IMBLearn’s Near Miss library to perform controlled under sampling on the dataset.  Near Miss selects samples of non-malware samples with the smallest average distance to the closest malware sample. Because the distances between samples are minimized, the dataset is optimized for machine learning. In our example, Near Miss out performed random under sampling by 12-20%, as measured by cross validated F1 scores.  
 
- # Synthetic Data Generation with Smote:
+ ### Synthetic Data Generation with Smote:
 
 SMOTE results were excluded from this notebook.  We did consider using SMOTE to
 generate additional, synthetic training data. However, SMOTE datasets of ~50K samples scored
@@ -56,24 +56,24 @@ poorly (F1 ~50%).  When we generated a SMOTE dataset of 2 million samples, we di
 equivalent results to Near Miss. However, the performance did not justify the processing time 
 and cost.  
 
- # Model Selection:  
+ ### Model Selection:  
 
 We compare the performance of five classification models: K Nearest Neighbor, Logistic
  Regression, Random Forest, XGBoost and ​​HistGradientBoostingClassifier.
 
- # Hyper Parameter Selection:
+ ### Hyper Parameter Selection:
 
 We completed a grid search for HistGradientBoostingClassifier.  We completed a randomized search for Random Forest and XGB to minimize processing time.  We completed separate parameter searches for undersampling and near miss datasets.  
 
 
- # Cross Validation:
+ ### Cross Validation:
 
 Data sets were split 67:33 for training and testing respectively.  Isolating a third of the dataset for testing exposes models that are overfit to training data. 
 
 
 ## Results
 
-# Model Performance:
+### Model Performance:
 
 Random Forest was the highest performing model
 Logistic Regression was the lowest scoring model
