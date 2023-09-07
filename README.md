@@ -40,7 +40,11 @@ We used IMBLearn’s Near Miss library to perform controlled under sampling on t
 
 	Synthetic Data Generation with Smote:
 
-	SMOTE results were excluded from this notebook.  We did consider using SMOTE to generate additional, synthetic training data. However, SMOTE datasets of ~50K samples scored poorly (F1 ~50%).  When we generated a SMOTE dataset of 2 million samples, we did get equivalent results to Near Miss. However, the performance did not justify the processing time and cost.  
+	SMOTE results were excluded from this notebook.  We did consider using SMOTE to
+generate additional, synthetic training data. However, SMOTE datasets of ~50K samples scored
+poorly (F1 ~50%).  When we generated a SMOTE dataset of 2 million samples, we did get 
+equivalent results to Near Miss. However, the performance did not justify the processing time 
+and cost.  
 
     Model Selection:  
 
@@ -52,7 +56,7 @@ Hyper Parameter Selection
 We completed a grid search for HistGradientBoostingClassifier.  We completed a randomized search for Random Forest and XGB to minimize processing time.  We completed separate parameter searches for undersampling and near miss datasets.  
 
 
-    Cross Validation:  
+    Cross Validation:
 
 Data sets were split 67:33 for training and testing respectively.  Isolating a third of the dataset for testing exposes models that are overfit to training data. 
 
