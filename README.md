@@ -1,7 +1,7 @@
 ## Synopsis
 
 The following exercise leverages ensemble machine learning techniques to identify 
-Ransomware addresses from within a dataset of bitcoin blockchain transactions  [^2]. The models are able to identify whether a given address is ransomware with 90% accuracy, and to 
+Ransomware addresses from within a dataset of bitcoin blockchain transactions  [^1]. The models are able to identify whether a given address is ransomware with 90% accuracy, and to 
 identify whether it belongs to a specific Ransomware family to within 99% accuracy.  
 
 ## Recommendations
