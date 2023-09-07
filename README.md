@@ -1,9 +1,8 @@
 ## Synopsis
 
 The following exercise leverages ensemble machine learning techniques to identify 
-Ransomware addresses from within a dataset [^1] of bitcoin blockchain transactions. The models
-are able to identify whether a given address is ransomware with 90% accuracy, and to identify 
-whether it belongs to a specific Ransomware family to within 99% accuracy.  
+Ransomware addresses from within a dataset of bitcoin blockchain transactions  [^2]. The models are able to identify whether a given address is ransomware with 90% accuracy, and to 
+identify whether it belongs to a specific Ransomware family to within 99% accuracy.  
 
 ## Recommendations
 
@@ -92,7 +91,7 @@ K Nearest Neighbor benefited the most from Near Miss
 
 
 
-[^1] :  Kaggle Data Source: 
+[^1]:  Kaggle Data Source: 
 ![alt text](https://www.kaggle.com/datasets/sapere0/bitcoinheist-ransomware-dataset)
 
 [^2]:  AAG Ransomware Statistics: 
