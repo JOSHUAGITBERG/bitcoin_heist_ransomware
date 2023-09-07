@@ -1,16 +1,17 @@
 ## Synopsis
 
 The following exercise leverages ensemble machine learning techniques to identify 
-Ransomware addresses from within a dataset of bitcoin blockchain transactions. The models
+Ransomware addresses from within a dataset [^1]:![alt text](https://www.kaggle.com/datasets/sapere0/bitcoinheist-ransomware-dataset/download?datasetVersionNumber=1 ) of bitcoin blockchain transactions. The models
 are able to identify whether a given address is ransomware with 90% accuracy, and to identify 
-whether it belongs to a specific Ransomware family to within 99% accuracy.  Given the proper 
-data, the models generated here could be used by authorities to identify malicious addresses 
-associated with ransomware, and be used by exchanges to keep malicious actors out of their 
-ecosystem.
+whether it belongs to a specific Ransomware family to within 99% accuracy.  
+
+## Recommendations
+
+We highly recommend that exchanges or authorities interested in identifying ransomware addresses leverage these models (or one similar).  Crypto exchanges can protect their customers, and avoid the cost of ransomware attacks, by identifying ransomware addresses and blocking suspicious transactions within their ecosystem. Investigators can leverage the models to identify perpetrators during the investigation and prosecution of illegal cyber crimes.  
 
 ## Ransomware Facts
 
- Ransomware is a cyber attack vector that started demanding payment in bitcoin starting around 2013 with the emergence of “CryptoLocker”. Ransomware attacks have since become more common.  According to service provider AAG [^1]:![alt text](https://aag-it.com/the-latest-ransomware-statistics/)
+ Ransomware is a cyber attack vector that started demanding payment in bitcoin starting around 2013 with the emergence of “CryptoLocker”. Ransomware attacks have since become more common.  According to service provider AAG [^2]:![alt text](https://aag-it.com/the-latest-ransomware-statistics/)
 
 Ransomware attacks cost the US healthcare sector an estimated $7.8 billion in downtime alone in 2021
 There were over 200 million ransomware attacks across the globe in the first half of 2022   
