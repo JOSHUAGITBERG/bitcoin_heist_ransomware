@@ -21,12 +21,12 @@ Bitcoin is a cryptocurrency that allows direct exchange between digital addresse
 
 ## Data Elements
 
-Income:  	Satoshis received by this address within a 24 hour period
-Loop:		How many coins were split and routed back via a different path this address
-Weight:	Value of all input transactions relative to value of all output transactions 
-Count:		Number of input transactions relative to number of output transactions
-Length: 	Number of mixing rounds where coins were passed to a newly created address
-Neighbors:	N/A
+* Income:  	Satoshis received by this address within a 24 hour period
+* Loop:		How many coins were split and routed back via a different path this address
+* Weight:	Value of all input transactions relative to value of all output transactions 
+* Count:		Number of input transactions relative to number of output transactions
+* Length: 	Number of mixing rounds where coins were passed to a newly created address
+* Neighbors:	N/A
 
 ## Summary Findings
 
@@ -74,10 +74,10 @@ Data sets were split 67:33 for training and testing respectively.  Isolating a t
 
 ### Model Performance:
 
-Random Forest was the highest performing model
-Logistic Regression was the lowest scoring model
-Near Miss data preparation improved model performance by 12-20%
-K Nearest Neighbor benefited the most from Near Miss 
+* Random Forest was the highest performing model
+* Logistic Regression was the lowest scoring model
+* Near Miss data preparation improved model performance by 12-20%
+* K Nearest Neighbor benefited the most from Near Miss 
 
 ![alt text](https://github.com/JOSHUAGITBERG/bitcoin_heist_ransomware/blob/main/images/F1-Scores-by-Model-Dataset.png)
 
