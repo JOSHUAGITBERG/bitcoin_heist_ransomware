@@ -1,23 +1,27 @@
-## Synopsis
+# Background
+
+### Synopsis
 
 The following exercise leverages ensemble machine learning techniques to identify 
 Ransomware addresses from within a dataset of bitcoin blockchain transactions  [^1]. The models are able to identify whether a given address is ransomware with 90% accuracy, and to 
 identify whether it belongs to a specific Ransomware family to within 99% accuracy.  
 
-## Recommendations
+### Recommendations
 
 We highly recommend that exchanges or authorities interested in identifying ransomware addresses leverage these models (or one similar).  Crypto exchanges can protect their customers, and avoid the cost of ransomware attacks, by identifying ransomware addresses and blocking suspicious transactions within their ecosystem. Investigators can leverage the models to identify perpetrators during the investigation and prosecution of illegal cyber crimes.  
 
-## Ransomware Facts
+### Ransomware Facts
 
  Ransomware is a cyber attack vector that started demanding payment in bitcoin starting around 2013 with the emergence of “CryptoLocker”. Ransomware attacks have since become more common.  According to service provider AAG [^2]
 * Ransomware attacks cost the US healthcare sector an estimated $7.8 billion in downtime alone in 2021
 * There were over 200 million ransomware attacks across the globe in the first half of 2022   
 * Ransomware accounted for around 20% of cyber breaches in 2022 
 
-## What is Bitcoin?
+### What is Bitcoin?
 
 Bitcoin is a cryptocurrency that allows direct exchange between digital addresses recorded on a blockchain.  Ransomware uses bitcoin to extract ransom because transactions are unregulated, digital, fast, global, irreversible, and anonymous.  However, because bitcoin has a publicly viewable ledger, we can analyze transactions to identify patterns indicating whether a given address or transaction maybe part of a ransomware network.  
+
+# Data 
 
 ## Data Elements
 
@@ -28,13 +32,7 @@ Bitcoin is a cryptocurrency that allows direct exchange between digital addresse
 * Length: 	Number of mixing rounds where coins were passed to a newly created address
 * Neighbors:	N/A
 
-## Summary Findings
-
-We built a random forest model that can identify a ransomware address with over 90% accuracy, and categorize it with 99% accuracy.  Assuming access to data similar to the information provided by Kaggle, the following models can be run as a daily batch process to alert authorities and exchange administrators to the potential of ransomware related activities. 
-
-## Methodology
-
- ### Data Preparation: 
+ ## Data Preparation: 
 
 The dataset was highly imbalanced, with only 2% of the data representing malware.  We took
 two independent approaches to remedy this:
@@ -55,7 +53,9 @@ poorly (F1 ~50%).  When we generated a SMOTE dataset of 2 million samples, we di
 equivalent results to Near Miss. However, the performance did not justify the processing time 
 and cost.  
 
- ### Model Selection:  
+# Machine Learning Models
+
+ ## Model Selection:  
 
 We compare the performance of five classification models: K Nearest Neighbor, Logistic
  Regression, Random Forest, XGBoost and ​​HistGradientBoostingClassifier.
@@ -70,14 +70,21 @@ We completed a grid search for HistGradientBoostingClassifier.  We completed a r
 Data sets were split 67:33 for training and testing respectively.  Isolating a third of the dataset for testing exposes models that are overfit to training data. 
 
 
-## Results
+# Results
+
+### Top Performer
+
+Our random forest model identified a ransomware address from among all addresses with over 90% accuracy.  A model with the same parameters was able to identify an address known to be associated with a specific ransomware variant with 99% accuracy, as measured by the F1 blended accuracy score.  
+
 
 ### Model Performance:
 
-* Random Forest was the highest performing model
-* Logistic Regression was the lowest scoring model
-* Near Miss data preparation improved model performance by 12-20%
-* K Nearest Neighbor benefited the most from Near Miss 
+Scores below represent the ability to categorize a given address as either malware or non-malware as measured by the blended F1 accuracy score:
+
+* Random Forest was the highest performing model at 90%
+* Logistic Regression was the lowest scoring model at 75%
+* Near Miss data preparation improved model performance by 12-21%
+* K Nearest Neighbor benefited the most from Near Miss, improving by 21%
 
 ![alt text](https://github.com/JOSHUAGITBERG/bitcoin_heist_ransomware/blob/main/images/F1-Scores-by-Model-Dataset.png)
 
@@ -85,7 +92,7 @@ Data sets were split 67:33 for training and testing respectively.  Isolating a t
 
 ![alt text](https://github.com/JOSHUAGITBERG/bitcoin_heist_ransomware/blob/main/images/F1-Scores-by-Label.png)
 
-## Feature Importance
+### Feature Importance
 
  We spend some time building cohorts based on highly weighted features as reported by the feature importance of XGBoost and Random Forest.  However, the approach of building cohorts only increased the presence of ransomware by a few percentages points, coming nowhere close to the >90% accuracy of the models.  This is likely due to the wide skew of feature values within each ransomware cohort, which makes individual transactions difficult to analyze.  Instead, we are required to rely on the models as effectively unsupervised.  The following chart is a collection of mean feature values, which were manually tabulated.  While this is chart is not useable, it provides some insight into how the features compare for the top five ransomware variants, and perhaps provides a visualization of how a feature based finger print of each variant may appear to a model.
 
