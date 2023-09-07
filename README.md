@@ -1,6 +1,12 @@
 Synopsis:
 
-    The following exercise leverages ensemble machine learning techniques to identify Ransomware addresses from within a dataset of bitcoin blockchain transactions. The models are able to identify whether a given address is ransomware with 90% accuracy, and to identify whether it belongs to a specific Ransomware family to within 99% accuracy.  Given the proper data, the models generated here could be used by authorities to identify malicious addresses associated with ransomware, and be used by exchanges to keep malicious actors out of their ecosystem.
+    The following exercise leverages ensemble machine learning techniques to identify 
+Ransomware addresses from within a dataset of bitcoin blockchain transactions. The models
+are able to identify whether a given address is ransomware with 90% accuracy, and to identify 
+whether it belongs to a specific Ransomware family to within 99% accuracy.  Given the proper 
+data, the models generated here could be used by authorities to identify malicious addresses 
+associated with ransomware, and be used by exchanges to keep malicious actors out of their 
+ecosystem.
 
 Ransomware Facts:
 
@@ -21,7 +27,8 @@ Methodology:
 
     Data Preparation: 
 
-    The dataset was highly imbalanced, with only 2% of the data representing malware.  We took two independent approaches to remedy this:
+    The dataset was highly imbalanced, with only 2% of the data representing malware.  We took
+two independent approaches to remedy this:
 
 	Random Under Sampling:  
 
@@ -37,7 +44,8 @@ We used IMBLearn’s Near Miss library to perform controlled under sampling on t
 
     Model Selection:  
 
-We compare the performance of five classification models: K Nearest Neighbor, Logistic Regression, Random Forest, XGBoost and ​​HistGradientBoostingClassifier.
+We compare the performance of five classification models: K Nearest Neighbor, Logistic
+ Regression, Random Forest, XGBoost and ​​HistGradientBoostingClassifier.
 
 Hyper Parameter Selection
 
