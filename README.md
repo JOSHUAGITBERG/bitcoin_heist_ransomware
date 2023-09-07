@@ -1,4 +1,4 @@
-##Synopsis##
+## Synopsis
 
 The following exercise leverages ensemble machine learning techniques to identify 
 Ransomware addresses from within a dataset of bitcoin blockchain transactions. The models
