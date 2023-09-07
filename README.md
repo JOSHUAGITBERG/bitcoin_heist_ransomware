@@ -91,11 +91,9 @@ K Nearest Neighbor benefited the most from Near Miss
 
 
 
-[^1]:  Kaggle Data Source: 
-![alt text](https://www.kaggle.com/datasets/sapere0/bitcoinheist-ransomware-dataset)
+[^1]:  [Kaggle Data Source:](https://www.kaggle.com/datasets/sapere0/bitcoinheist-ransomware-dataset)
 
-[^2]:  AAG Ransomware Statistics: 
-![alt text](https://aag-it.com/the-latest-ransomware-statistics/)
+[^2]:  [AAG Ransomware Statistics:](https://aag-it.com/the-latest-ransomware-statistics/)
 
 
 
