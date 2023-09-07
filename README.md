@@ -1,4 +1,6 @@
-Background:
+Synopsis:
+
+    The following exercise leverages ensemble machine learning techniques to identify Ransomware addresses from within a dataset of bitcoin blockchain transactions. The models are able to identify whether a given address is ransomware with 90% accuracy, and to identify whether it belongs to a specific Ransomware family to within 99% accuracy.  Given the proper data, the models generated here could be used by authorities to identify malicious addresses associated with ransomware, and be used by exchanges to keep malicious actors out of their ecosystem.
 
 Ransomware Facts:
 
@@ -9,59 +11,60 @@ Ransomware accounted for around 20% of cyber breaches in 2022
 
 Bitcoin:
 
-  Bitcoin is a cryptocurrency that allows direct exchange between digital addresses recorded on a blockchain.  Ransomware uses bitcoin to extract ransom because transactions are unregulated, digital, fast, global, irreversible, and anonymous.  However, because bitcoin has a publicly viewable ledger, we can analyze transactions to look for patterns that may indicate whether a given address or transaction maybe part of a ransomware network.  The following study analyzes a dataset drawn from the bitcoin blockchain to attempt to predict whether a given address may be a ransomware address.  The ability to identify known bad addresses would help authorities track down organizations perpetrating ransomware attacks, and could be used in real time by exchanges to flag suspicious activity within their network.  
+  Bitcoin is a cryptocurrency that allows direct exchange between digital addresses recorded on a blockchain.  Ransomware uses bitcoin to extract ransom because transactions are unregulated, digital, fast, global, irreversible, and anonymous.  However, because bitcoin has a publicly viewable ledger, we can analyze transactions to identify patterns indicating whether a given address or transaction maybe part of a ransomware network.  
 
 Summary Findings:
 
-   We were able to build a random forest model that can identify a ransomware address with over 90% accuracy. 
+   We built a random forest model that can identify a ransomware address with over 90% accuracy, and categorize it with 99% accuracy.  Assuming access to data similar to the information provided by Kaggle, the following models can be run as a daily batch process to alert authorities and exchange administrators to the potential of ransomware related activities. 
+
+Methodology:
+
+    Data Preparation: 
+
+    The dataset was highly imbalanced, with only 2% of the data representing malware.  We took two independent approaches to remedy this:
+
+	Random Under Sampling:  
+
+We combined all of the malware data with a random sample of just 2% of the remaining data set to create a balanced data set of malware and non-malware.  
+
+	Near Miss Controlled Under Sampling:  
+
+We used IMBLearn’s Near Miss library to perform controlled under sampling on the dataset.  Near Miss selects samples of non-malware samples with the smallest average distance to the closest malware sample. Because the distances between samples are minimized, the dataset is optimized for machine learning. In our example, Near Miss out performed random under sampling by 12-20%, as measured by cross validated F1 scores.  
+
+	Synthetic Data Generation with Smote:
+
+	SMOTE results were excluded from this notebook.  We did consider using SMOTE to generate additional, synthetic training data. However, SMOTE datasets of ~50K samples scored poorly (F1 ~50%).  When we generated a SMOTE dataset of 2 million samples, we did get equivalent results to Near Miss. However, the performance did not justify the processing time and cost.  
+
+    Model Selection:  
+
+We compare the performance of five classification models: K Nearest Neighbor, Logistic Regression, Random Forest, XGBoost and ​​HistGradientBoostingClassifier.
+
+Hyper Parameter Selection
+
+We completed a grid search for HistGradientBoostingClassifier.  We completed a randomized search for Random Forest and XGB to minimize processing time.  We completed separate parameter searches for undersampling and near miss datasets.  
 
 
-Approach:
+    Cross Validation:  
 
-  We built models with three different classifiers, including Knearest Neighbor, Logistic Regression, and RandomForest.  We also treated the data with three different approaches, undersampling, smote, and nearest neighbor.  After modeling and comparing the results against a test data set for each approach, we found that SMOTE resampling combined with Random Forest provided the highest F-scores.  
-
-Insert Results Visual Here…
-
-Data Description…
-
-Describe data…
-
-Data Preparation…
-
-Describe steps to cleanse data and details about over sampling etc
+Data sets were split 67:33 for training and testing respectively.  Isolating a third of the dataset for testing exposes models that are overfit to training data. 
 
 
+Results:
 
-Work in Progress:  Workbook is complete but I have not completed an analysis.  I will write this up after I have summary findings to present. 
+Model Performance:
 
-General Structure:
+Random Forest was the highest performing model
+Logistic Regression was the lowest scoring model
+Near Miss data preparation improved model performance by 12-20%
+K Nearest Neighbor benefited the most from Near Miss 
 
-Introduction-  a little about bitcoin and ransomware.  Describe Business Problem and how this model can address it in a real world situation.  
+![alt text](https://github.com/JOSHUAGITBERG/bitcoin_heist_ransomware/blob/main/images/F1-Scores-by-Model-Dataset.png)
 
-Summary Results-  Describe findings around specific features.  Example… long length indicates ransomware (or whatever… still in progress)
+Ransomware Label Identification:
 
-Data-  Summarize the Kaggle data information and structure.  
-
-Data Preparation-  Discuss Smote, Near Miss and Manual Approaches.
-
-Data Signal-  Discuss relative performance of Smote and Near Miss.
-
-Raw Results:
-
-Under KNN Pscore:  			0.722957629465522
-Smote KNN Pscore:  			0.9002395691253104
-Near Miss KNN Pscore:  		0.8335715213719631
-
-Under logistic regression Pscore:  	0.5761379971250599
-Smote logistic regression Pscore:  	0.6288116628464037
-Near Miss logistic regression Pscore:  	0.6876893726854449
-
-Under RandomForest Pscore:  	0.7742226228030644
-Smote RandomForest Pscore:  	0.958953306708514
-Near Miss RandomForest Pscore:  	0.8614995338926621
+![alt text](https://github.com/JOSHUAGITBERG/bitcoin_heist_ransomware/blob/main/images/F1-Scores-by-Label.png)
 
 
 
 
-  
 
