@@ -97,6 +97,8 @@ Scores below represent the ability to categorize a given address as either malwa
 
 ### Ransomware Label Identification:
 
+The following chart shows the results of running Random Forest against the Near Miss data set to categorize addresses as neutral, or a specific variety of Ransomware (princetonCerber for example).  It requires running the model for each variant, but produces very accurate results.
+
 ![alt text](https://github.com/JOSHUAGITBERG/bitcoin_heist_ransomware/blob/main/images/F1-Scores-by-Label.png)
 
 ### Feature Importance
