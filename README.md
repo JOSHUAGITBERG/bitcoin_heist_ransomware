@@ -25,7 +25,7 @@ Bitcoin is a cryptocurrency that allows direct exchange between digital addresse
 
 ## Data Elements
 
-* Income:  	Satoshis received by this address within a 24 hour period
+* Income:  	Satoshis (1^e-6 of a bitcoin) received by this address within a 24 hour period
 * Loop:		How many coins were split and routed back via a different path this address
 * Weight:	Value of all input transactions relative to value of all output transactions 
 * Count:		Number of input transactions relative to number of output transactions
@@ -101,7 +101,7 @@ Scores below represent the ability to categorize a given address as either malwa
 
 ### Feature Importance
 
- We spend some time building cohorts based on highly weighted features as reported by the feature importance of XGBoost and Random Forest.  However, the approach of building cohorts only increased the presence of ransomware by a few percentages points, coming nowhere close to the >90% accuracy of the models.  This is likely due to the wide distribution of feature values within each ransomware cohort, which makes individual transactions difficult to analyze.  Instead, we are required to rely on the models as effectively unsupervised.  
+ We spent some time building cohorts based on highly weighted features as reported by the feature importance of XGBoost and Random Forest.  However, the approach of building cohorts only increased the density of ransomware addresses within a sample by a few percentage points, which was nowhere close to the 99% accuracy of the ransomware identification models.  This is likely due to the wide distribution of feature values within each ransomware cohort, which makes individual features difficult to isolate.  Instead, we are required to rely on the models as effectively unsupervised.  
 
 The following chart is a collection of mean feature values, which were manually tabulated.  The chart provides some insight into how the features compare for the top five ransomware variants, and provides a visualization of how a feature based finger print of each variant may appear within a model.
 
