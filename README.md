@@ -45,7 +45,7 @@ We combined all of the malware data with a random sample of just 2% of the remai
 
   ### Near Miss Controlled Under Sampling:  
 
-We used IMBLearn’s Near Miss library to perform controlled under sampling on the dataset.  Near Miss selects samples of non-malware samples with the smallest average distance to the closest malware sample. Because the distances between samples are minimized, the dataset is optimized for machine learning. In our example, Near Miss out performed random under sampling by 12-20%, as measured by cross validated F1 scores.  
+We used IMBLearn’s Near Miss library to perform controlled under sampling on the dataset.  Near Miss selects samples of non-malware samples with the smallest average distance to the closest malware sample. Because the distances between samples are minimized, the dataset is optimized for machine learning. In our example, Near Miss out performed random under sampling by 9-20%, as measured by cross validated F1 scores.  
 
  ### Synthetic Data Generation with Smote:
 
@@ -97,7 +97,7 @@ Scores below represent the ability to categorize a given address as either malwa
 
 ### Ransomware Label Identification:
 
-The following chart shows the results of running Random Forest against the Near Miss data set to categorize addresses as neutral, or a specific variety of Ransomware (princetonCerber for example).  It requires running the model for each variant, but produces very accurate results.
+The following chart shows the results of running Random Forest against the Near Miss data set to categorize addresses as neutral, or a specific variety of Ransomware (princetonCerber for example).  It requires running the model for each variant, but produces very accurate results, exceeding 99% for all variants.
 
 ![alt text](https://github.com/JOSHUAGITBERG/bitcoin_heist_ransomware/blob/main/images/F1-Scores-by-Label.png)
 
