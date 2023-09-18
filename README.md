@@ -34,7 +34,7 @@ Bitcoin is a cryptocurrency that allows direct exchange between digital addresse
 
  ## Data Preparation: 
 
-The dataset was relatively clean with no duplicated or nulls.  We removed categorical data and date fields for modeling. 
+The dataset was relatively clean with no duplicates or nulls.  We removed categorical data and date fields for modeling. 
 
 The dataset was highly imbalanced, with only 2% of the data representing malware.  We took
 two independent approaches to remedy this:
